@@ -57,10 +57,10 @@
   justify-content: center;
 }
 
-.social-item + .social-item {
-  margin-left: 10px;
+.social__item:not(:last-child) {
+  margin-right: 10px;
 }
-.social-icon {
+.social__icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,12 +77,12 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-icon:hover,
-.social-icon:focus {
+.social__icon:hover,
+.social__icon:focus {
   background-color: var(--accent-color);
   color: var(--base-color);
 }
 
-.soc-logo {
+.social__logo {
   fill: currentColor;
 }

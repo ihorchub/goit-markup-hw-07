@@ -1,4 +1,4 @@
-.page-header {
+.container--header {
   display: flex;
   align-items: center;
 }
@@ -9,8 +9,8 @@
 }
 
 .logo {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 
   color: var(--accent-color);
 
@@ -20,20 +20,20 @@
   line-height: 1.19;
 }
 
-.logo-header {
+.logo__header {
   color: #212121;
 }
 
-.list-nav {
+.site-nav__list {
   display: flex;
   margin-left: 93px;
 }
 
-.list-nav .item:not(:last-child) {
+.site-nav__item:not(:last-child) {
   margin-right: 50px;
 }
 
-.list-nav .link {
+.site-nav__link {
   display: inline-block;
 
   position: relative;
@@ -42,64 +42,21 @@
 
   color: var(--heading-color);
 
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.list-nav .link:hover,
-.list-nav .link:focus {
+.site-nav__link:hover,
+.site-nav__link:focus {
   color: var(--accent-color);
 }
 
-.contacts {
-  display: flex;
-  margin-left: auto;
-}
-
-.contacts .link + .link {
-  margin-left: 50px;
-}
-
-.contacts .link {
-  display: flex;
-  padding-top: 32px;
-  padding-bottom: 31px;
-  align-items: center;
-
-  color: var(--text-color);
-
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.contacts .link:hover,
-.contacts .link:focus {
+.site-nav__link--current {
   color: var(--accent-color);
 }
 
-.cont-icon {
-  fill: currentColor;
-  margin-right: 10px;
-}
-
-.link.current {
-  color: var(--accent-color);
-}
-
-.list-nav .current.link::after {
+.site-nav__link--current::after {
   content: '';
   position: absolute;
   left: 0;
@@ -110,4 +67,38 @@
   border-radius: 2px;
 
   background-color: var(--accent-color);
+}
+
+.contacts {
+  display: flex;
+  margin-left: auto;
+}
+
+.contacts__link:not(:last-child) {
+  margin-right: 50px;
+}
+
+.contacts__link {
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 31px;
+  align-items: center;
+
+  color: var(--text-color);
+
+  font-style: normal;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contacts__link:hover,
+.contacts__link:focus {
+  color: var(--accent-color);
+}
+
+.contacts__icon {
+  fill: currentColor;
+  margin-right: 10px;
 }

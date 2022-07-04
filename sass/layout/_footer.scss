@@ -1,13 +1,9 @@
-footer {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.container.footer {
+.container--footer {
   display: flex;
+  align-items: baseline;
 }
 
-.logo-footer {
+.logo__footer {
   color: var(--base-color);
 }
 
@@ -16,15 +12,14 @@ footer {
 
   font-style: normal;
   font-size: 14px;
-  /* line-height: 1.71; */
   line-height: 1.5;
 }
 
-.address-list .item + .item {
-  margin-top: 9px;
+.address__item:not(:last-child) {
+  margin-bottom: 9px;
 }
 
-.address-map {
+.address__map {
   color: var(--base-color);
 
   transition-property: color;
@@ -32,8 +27,8 @@ footer {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.address-tel,
-.address-mail {
+.address__tel,
+.address__mail {
   color: rgba(255, 255, 255, 0.6);
 
   transition-property: color;
@@ -41,19 +36,20 @@ footer {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.address-map:hover,
-.address-map:focus,
-.address-tel:hover,
-.address-tel:focus,
-.address-mail:hover,
-.address-mail:focus {
+.address__map:hover,
+.address__map:focus,
+.address__tel:hover,
+.address__tel:focus,
+.address__mail:hover,
+.address__mail:focus {
   color: var(--accent-color);
 }
 
 .footer-socials {
   margin-left: 83px;
 }
-.connect {
+.footer-socials__text,
+.footer-form__text {
   margin-bottom: 20px;
 
   font-weight: 700;
@@ -64,7 +60,7 @@ footer {
   color: var(--base-color);
 }
 
-.social-icon.link {
+.social__icon--footer {
   color: var(--base-color);
   background-color: var(--footer-social-color);
 
@@ -73,8 +69,8 @@ footer {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-icon.link:hover,
-.social-icon.link:focus {
+.social__icon--footer:hover,
+.social__icon--footer:focus {
   background-color: var(--accent-color);
   color: var(--base-color);
 }
@@ -88,7 +84,7 @@ footer {
   align-items: center;
 }
 
-.email {
+.subscribe__email {
   padding: 14px 0 14px 16px;
   margin-right: 12px;
   width: 358px;
@@ -105,12 +101,12 @@ footer {
   border-radius: 4px;
 }
 
-.main-button {
+.main-button--right-icon {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.send {
+.main-button__icon {
   margin-left: 10px;
 }
