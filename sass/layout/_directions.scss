@@ -1,0 +1,43 @@
+.directions {
+  padding-top: 0;
+}
+
+.directions-title {
+  margin-bottom: 50px;
+
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+}
+
+.directions-list {
+  display: flex;
+}
+
+.directions-list .item + .item {
+  margin-left: 30px;
+}
+
+.directions-list > .item {
+  position: relative;
+}
+
+.directions-text {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+
+  height: 70px;
+  width: 100%;
+
+  background-color: rgba(47, 48, 58, 0.8);
+  color: var(--base-color);
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+}
