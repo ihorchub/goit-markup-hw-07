@@ -1,4 +1,9 @@
-.clients-title {
+.clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.clients__title {
   margin-bottom: 50px;
 
   font-size: 36px;
@@ -6,15 +11,15 @@
   text-align: center;
 }
 
-.clients-list {
+.clients__list {
   display: flex;
   justify-content: center;
 }
 
-.clients-list .items + .items {
-  margin-left: 30px;
+.clients__items:not(:last-child) {
+  margin-right: 30px;
 }
-.clients-icon {
+.clients__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,12 +36,12 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.clients-icon:hover,
-.clients-icon:focus {
+.clients__link:hover,
+.clients__link:focus {
   color: var(--accent-color);
   border-color: var(--accent-color);
 }
 
-.clients-icon .icon {
+.clients__icon {
   fill: currentColor;
 }

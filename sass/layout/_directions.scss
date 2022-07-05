@@ -1,8 +1,9 @@
 .directions {
   padding-top: 0;
+  padding-bottom: 94px;
 }
 
-.directions-title {
+.directions__title {
   margin-bottom: 50px;
 
   font-size: 36px;
@@ -10,19 +11,19 @@
   text-align: center;
 }
 
-.directions-list {
+.directions__list {
   display: flex;
 }
 
-.directions-list .item + .item {
-  margin-left: 30px;
+.directions__item:not(:last-child) {
+  margin-right: 30px;
 }
 
-.directions-list > .item {
+.directions__item {
   position: relative;
 }
 
-.directions-text {
+.directions__text {
   display: flex;
   position: absolute;
   bottom: 0;

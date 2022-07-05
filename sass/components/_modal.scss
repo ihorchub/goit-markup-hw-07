@@ -15,7 +15,7 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-hidden {
+.backdrop--is-hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
@@ -41,7 +41,19 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-hidden .modal {
+.modal__title {
+  margin-bottom: 12px;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: var(--heading-color);
+}
+
+.backdrop--is-hidden .modal {
   transform: translate(-50%, -50%) scale(2.3, 1.5);
 }
 
@@ -59,12 +71,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.close:hover .icon-close,
-.close:focus .icon-close {
-  fill: var(--accent-color);
-}
-
-.icon-close {
+.close__icon {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -75,4 +82,9 @@
   transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close:hover .close__icon,
+.close:focus .close__icon {
+  fill: var(--accent-color);
 }
