@@ -1,28 +1,23 @@
 .clients {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  @include sectionPadding();
 }
 
 .clients__title {
   margin-bottom: 50px;
 
-  font-size: 36px;
-  line-height: 1.17;
+  @include font(null, 36px, 1.17, null);
   text-align: center;
 }
 
 .clients__list {
-  display: flex;
-  justify-content: center;
+  @include flexCentered($ai: null);
 }
 
 .clients__items:not(:last-child) {
   margin-right: 30px;
 }
 .clients__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCentered();
 
   width: 170px;
   height: 92px;
@@ -31,15 +26,13 @@
 
   color: var(--social-color);
 
-  transition-property: color, border-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
+  @include transition(color border-color);
 
-.clients__link:hover,
-.clients__link:focus {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+  }
 }
 
 .clients__icon {

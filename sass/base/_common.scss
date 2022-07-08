@@ -16,8 +16,7 @@ header {
 }
 
 footer {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  @include sectionPadding(60px, 60px);
   background-color: #2f303a;
 }
 

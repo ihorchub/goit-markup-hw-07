@@ -1,6 +1,5 @@
 .container--footer {
-  display: flex;
-  align-items: baseline;
+  @include flexCentered($jc: null, $ai: baseline);
 }
 
 .logo__footer {
@@ -11,8 +10,7 @@
   margin-top: 20px;
 
   font-style: normal;
-  font-size: 14px;
-  line-height: 1.5;
+  @include font(null, 14px, 1.5, null);
 }
 
 .address__item:not(:last-child) {
@@ -21,28 +19,23 @@
 
 .address__map {
   color: var(--base-color);
+  @include transition();
 
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
 }
 
 .address__tel,
 .address__mail {
   color: rgba(255, 255, 255, 0.6);
+  @include transition();
 
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.address__map:hover,
-.address__map:focus,
-.address__tel:hover,
-.address__tel:focus,
-.address__mail:hover,
-.address__mail:focus {
-  color: var(--accent-color);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
 }
 
 .footer-socials {
@@ -51,10 +44,7 @@
 .footer-socials__text,
 .footer-form__text {
   margin-bottom: 20px;
-
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
+  @include font(700, 14px, 1.14, null);
   text-transform: uppercase;
 
   color: var(--base-color);
@@ -62,17 +52,15 @@
 
 .social__icon--footer {
   color: var(--base-color);
-  background-color: var(--footer-social-color);
+  background-color: rgba(255, 255, 255, 0.1);
 
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
+  @include transition(background-color);
 
-.social__icon--footer:hover,
-.social__icon--footer:focus {
-  background-color: var(--accent-color);
-  color: var(--base-color);
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+    color: var(--base-color);
+  }
 }
 
 .footer-form {
@@ -80,8 +68,7 @@
 }
 
 .subscribe {
-  display: flex;
-  align-items: center;
+  @include flexCentered($jc: null);
 }
 
 .subscribe__email {
@@ -89,9 +76,7 @@
   margin-right: 12px;
   width: 358px;
 
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.25;
+  @include font(400, 16px, 1.25, null);
 
   color: rgba(255, 255, 255, 0.6);
 
@@ -102,9 +87,7 @@
 }
 
 .main-button--right-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCentered();
 }
 
 .main-button__icon {

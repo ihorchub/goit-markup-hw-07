@@ -1,94 +1,76 @@
-.form__field {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.form__label {
-  margin-bottom: 4px;
-
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
-
-  color: var(--text-color);
-}
-
-.form__input,
-.form__textarea {
+%baseForm {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   font-size: 12px;
   line-height: 1.17;
+  @include transition(border-color);
+}
 
-  transition-property: border-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+%formOutline {
+  outline: 3px solid var(--accent-color);
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+}
+
+.form__label {
+  margin-bottom: 4px;
+  @include font(400, 12px, 1.17, 0.01em);
+  color: var(--text-color);
 }
 
 .form__input {
   padding: 12px 12px 12px 42px;
+  @extend %baseForm;
+  &:hover,
+  &:focus {
+    border-color: var(--accent-color);
+  }
+  &:focus-visible {
+    outline: 1px solid var(--accent-color);
+  }
 }
 
 .form__textarea {
   padding: 12px 16px;
   resize: none;
-}
-
-.form__input:hover,
-.form__input:focus,
-.form__textarea:hover,
-.form__textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.form__input:focus-visible,
-.form__textarea:focus-visible {
-  outline: 1px solid var(--accent-color);
-}
-
-.form__field:not(:last-of-type) {
-  margin-bottom: 10px;
+  @extend %baseForm;
+  &:hover,
+  &:focus {
+    border-color: var(--accent-color);
+  }
+  &:focus-visible {
+    outline: 1px solid var(--accent-color);
+  }
+  &::placeholder {
+    @include font(400, 12px, 1.17, 0.01em);
+    color: rgba(117, 117, 117, 0.5);
+  }
 }
 
 .form__icon {
   position: absolute;
   bottom: 11px;
   left: 12px;
-
   fill: var(--heading-color);
-
-  transition-property: fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.form__input:focus + .form__icon,
-.form__input:hover + .form__icon {
-  fill: var(--accent-color);
-}
-
-.form__textarea::placeholder {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
+  @include transition(fill);
+  .form__input:focus + &,
+  .form__input:hover + & {
+    fill: var(--accent-color);
+  }
 }
 
 .check {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
-
+  @include flexCentered();
+  @include font(400, 14px, 1.71, null);
   color: var(--text-color);
-
-  margin-top: 20px;
+  margin-top: 25px;
   margin-bottom: 30px;
 }
 
@@ -101,20 +83,18 @@
 .check__icons {
   position: relative;
   margin-right: 7px;
-
   line-height: 0;
+  .check__input:focus-visible + & {
+    @extend %formOutline;
+  }
 }
 
 .check__enabled {
   position: absolute;
   top: 0;
   left: 0;
-
   opacity: 0;
-
-  transition-property: opacity;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  @include transition(opacity);
 }
 
 .check__input:checked + .check__icons > .check__enabled {
@@ -123,23 +103,20 @@
 
 .check__disabled {
   opacity: 1;
-
-  transition-property: opacity;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  @include transition(opacity);
 }
 
 .check__input:checked + .check__icons > .check__disabled {
   opacity: 0;
 }
 
-.check__input:focus-visible + .check__icons,
-.close:focus-visible,
-.check__conditions:focus-visible,
-.form > .main-button:focus-visible {
+.main-button--outline:focus-visible {
   outline: 3px solid var(--accent-color);
 }
 
 .check__conditions {
   color: var(--accent-color);
+  &:focus-visible {
+    @extend %formOutline;
+  }
 }

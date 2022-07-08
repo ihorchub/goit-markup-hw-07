@@ -10,9 +10,7 @@
 
   opacity: 1;
 
-  transition-property: opacity;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  @include transition(opacity);
 }
 
 .backdrop--is-hidden {
@@ -36,19 +34,14 @@
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 
-  transition-property: transform, visibility;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  @include transition(transform visibility);
 }
 
 .modal__title {
   margin-bottom: 12px;
 
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.15;
+  @include font(700, 20px, 1.15, 0.03em);
   text-align: center;
-  letter-spacing: 0.03em;
 
   color: var(--heading-color);
 }
@@ -69,6 +62,10 @@
   cursor: pointer;
   background: var(--base-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
+
+  &:focus-visible {
+    @extend %formOutline;
+  }
 }
 
 .close__icon {
@@ -79,12 +76,10 @@
 
   fill: #000000;
 
-  transition-property: fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
+  @include transition(fill);
 
-.close:hover .close__icon,
-.close:focus .close__icon {
-  fill: var(--accent-color);
+  .close:hover &,
+  .close:focus & {
+    fill: var(--accent-color);
+  }
 }

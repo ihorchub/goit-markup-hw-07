@@ -1,14 +1,13 @@
 .team {
-  padding-top: 94px;
-  padding-bottom: 94px;
-  background-color: #f5f4fa;
+  @include sectionPadding();
+  background-color: var(--btn-color);
 }
 
 .team__title {
   margin-bottom: 50px;
 
-  font-size: 36px;
-  line-height: 1.17;
+  @include font(null, 36px, 1.17, null);
+
   text-align: center;
 }
 
@@ -24,10 +23,9 @@
 
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-}
-
-.member:not(:last-child) {
-  margin-right: 30px;
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 .member__description {
@@ -38,9 +36,7 @@
 .member__name {
   margin-bottom: 10px;
 
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.19;
+  @include font(500, 16px, 1.19, null);
   text-align: center;
 }
 
@@ -49,23 +45,19 @@
 
   color: var(--text-color);
 
-  font-size: 16px;
-  line-height: 1.19;
+  @include font(null, 16px, 1.19, null);
   text-align: center;
 }
 
 .social {
-  display: flex;
-  justify-content: center;
+  @include flexCentered($ai: null);
 }
 
 .social__item:not(:last-child) {
   margin-right: 10px;
 }
 .social__icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCentered();
 
   width: 44px;
   height: 44px;
@@ -74,15 +66,12 @@
   color: var(--social-color);
   background-color: var(--base-color);
 
-  transition-property: color, background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.social__icon:hover,
-.social__icon:focus {
-  background-color: var(--accent-color);
-  color: var(--base-color);
+  @include transition(color background-color);
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+    color: var(--base-color);
+  }
 }
 
 .social__logo {

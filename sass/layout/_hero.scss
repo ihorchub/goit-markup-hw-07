@@ -1,12 +1,8 @@
 .hero {
   max-width: 1600px;
   height: 600px;
-  margin-right: auto;
-  margin-left: auto;
-
-  padding-top: 200px;
-  padding-bottom: 200px;
-
+  @include centered();
+  @include sectionPadding(200px, 200px);
   background-color: #c4c4c4;
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url('../images/hero.jpg');
@@ -18,14 +14,11 @@
 
 .hero__title {
   width: 696px;
-  margin-right: auto;
-  margin-left: auto;
+  @include centered();
   margin-bottom: 30px;
 
   color: var(--base-color);
-  font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
-  letter-spacing: 0.06em;
+
+  @include font(900, 44px, 1.36, 0.06em);
   text-transform: uppercase;
 }

@@ -1,6 +1,5 @@
 .main-button {
-  margin-right: auto;
-  margin-left: auto;
+  @include centered();
   min-width: 200px;
 
   border-radius: 4px;
@@ -14,17 +13,11 @@
   display: block;
 
   font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.88;
-  letter-spacing: 0.06em;
+  @include font(700, 16px, 1.88, 0.06em);
+  @include transition(background-color);
 
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.main-button:hover,
-.main-button:focus {
-  background-color: #188ce8;
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+  }
 }

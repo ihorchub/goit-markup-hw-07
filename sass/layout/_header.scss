@@ -1,11 +1,9 @@
 .container--header {
-  display: flex;
-  align-items: center;
+  @include flexCentered($jc: null);
 }
 
 .site-nav {
-  display: flex;
-  align-items: center;
+  @include flexCentered($jc: null);
 }
 
 .logo {
@@ -15,13 +13,11 @@
   color: var(--accent-color);
 
   font-family: Raleway, sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
+  @include font(700, 26px, 1.19, null);
 }
 
 .logo__header {
-  color: #212121;
+  color: #000000;
 }
 
 .site-nav__list {
@@ -42,31 +38,29 @@
 
   color: var(--heading-color);
 
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
+  @include transition();
 
-.site-nav__link:hover,
-.site-nav__link:focus {
-  color: var(--accent-color);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
 }
 
 .site-nav__link--current {
   color: var(--accent-color);
-}
 
-.site-nav__link--current::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
 
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
 
-  background-color: var(--accent-color);
+    background-color: var(--accent-color);
+  }
 }
 
 .contacts {
@@ -74,28 +68,24 @@
   margin-left: auto;
 }
 
-.contacts__link:not(:last-child) {
-  margin-right: 50px;
-}
-
 .contacts__link {
-  display: flex;
+  @include flexCentered($jc: null);
   padding-top: 32px;
   padding-bottom: 31px;
-  align-items: center;
 
   color: var(--text-color);
 
   font-style: normal;
 
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
+  @include transition();
 
-.contacts__link:hover,
-.contacts__link:focus {
-  color: var(--accent-color);
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
 }
 
 .contacts__icon {
